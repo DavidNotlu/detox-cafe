@@ -1137,7 +1137,7 @@ script = ExtResource("7_35qyi")
 position = Vector2(21, 49)
 scale = Vector2(0.418605, 0.480392)
 sprite_frames = SubResource("SpriteFrames_226nb")
-animation = &"walk_front"
+animation = &"walk_back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D2"]
 position = Vector2(19, 52)

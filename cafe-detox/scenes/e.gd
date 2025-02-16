@@ -23,7 +23,7 @@ func _process(delta):
 	elif direction.x < 0:
 		$Body.play("walk_left")
 	elif direction.y > 0:
-		$Body.play("default")  # Walking downward
+		$Body.play("walk_front")  # Walking downward
 	elif direction.y < 0:
 		$Body.play("walk_back")  # Walking upward
 	else:
