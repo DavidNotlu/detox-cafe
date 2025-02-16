@@ -5,8 +5,9 @@ extends Node
 func _ready() -> void:
 	var music_player := AudioStreamPlayer.new()
 	# Load the audio stream from your asset folder.
-	music_player.stream = preload("res://assets/noodle_cafe.wav")
+	music_player.stream = preload("res://assets/Cold Sweats.wav")
 	music_player.autoplay = true
+	music_player.volume_db = -5.0
 	add_child(music_player)
 	
 	# (Optional) Start playing explicitly if not using autoplay.

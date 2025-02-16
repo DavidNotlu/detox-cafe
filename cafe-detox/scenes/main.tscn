@@ -1,7 +1,6 @@
-[gd_scene load_steps=51 format=4 uid="uid://b67jv1e4ljcuk"]
-[gd_scene load_steps=49 format=4 uid="uid://b67jv1e4ljcuk"]
+[gd_scene load_steps=52 format=4 uid="uid://b67jv1e4ljcuk"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_cvtxm"]
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_cvtxm"]
 [ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_xm4n2"]
 [ext_resource type="Texture2D" uid="uid://hwxvmehn80xr" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="2_l5k6j"]
 [ext_resource type="Texture2D" uid="uid://dwff88m3soa10" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="3_tt4gp"]
@@ -9,9 +8,9 @@
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="5_af50k"]
 [ext_resource type="Texture2D" uid="uid://cnoxs7r3m286v" path="res://assets/char free/tommy.png" id="6_a5q3y"]
 [ext_resource type="Script" path="res://scenes/e.gd" id="7_35qyi"]
+[ext_resource type="Script" path="res://scenes/chatbox.gd" id="8_k2fvt"]
 [ext_resource type="SpriteFrames" uid="uid://cf8631acua81m" path="res://assets/char free/female.tres" id="9_njtws"]
 [ext_resource type="AudioStream" uid="uid://dvcalia8ov4ad" path="res://assets/noodle_cafe.wav" id="10_pbora"]
-[ext_resource type="Script" path="res://scenes/chatbox.gd" id="8_k2fvt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqeuo"]
 texture = ExtResource("1_xm4n2")
@@ -1130,7 +1129,7 @@ script = ExtResource("5_af50k")
 position = Vector2(-97, -8)
 scale = Vector2(0.418605, 0.480392)
 sprite_frames = SubResource("SpriteFrames_226nb")
-animation = &"walk_back"
+animation = &"walk_right"
 
 [node name="Camera2D" type="Camera2D" parent="TileLayers/CharacterBody2D"]
 position = Vector2(-35, -13)
@@ -1154,9 +1153,6 @@ animation = &"walk_back"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D2"]
 position = Vector2(20.5, 49)
 shape = SubResource("RectangleShape2D_nxrm0")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_pbora")
 
 [node name="Chatbox" type="Control" parent="."]
 layout_mode = 3
@@ -1182,3 +1178,15 @@ text = "Welcome to my \"house\""
 layout_mode = 0
 offset_right = 329.0
 offset_bottom = 59.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pbora")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -250.0
+offset_top = -160.0
+offset_right = 220.0
+offset_bottom = -85.0
+text = "Your girlfriend invited you to her house. She seemed excited. 
+Little do you know you can’t leave. 
+Convince her to let you leave if you can…."

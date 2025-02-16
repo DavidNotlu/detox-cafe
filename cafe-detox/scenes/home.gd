@@ -2,6 +2,14 @@
 extends Control
 
 func _ready() -> void:
+	var music_player := AudioStreamPlayer.new()
+	# Load the audio stream from your asset folder.
+	music_player.stream = preload("res://assets/noodle_cafe.wav")
+	music_player.autoplay = true
+	add_child(music_player)
+	
+	# (Optional) Start playing explicitly if not using autoplay.
+	music_player.play()
 	# Connect the EnterButton's pressed signal.
 	$Panel/EnterButton.pressed.connect(_on_enter_clicked)
 
