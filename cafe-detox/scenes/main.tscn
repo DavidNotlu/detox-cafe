@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b67jv1e4ljcuk"]
+[gd_scene load_steps=36 format=4 uid="uid://b67jv1e4ljcuk"]
 
 [ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_xm4n2"]
 [ext_resource type="Texture2D" uid="uid://hwxvmehn80xr" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="2_l5k6j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bexbeat01bewq" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="4_m8wp6"]
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="5_af50k"]
 [ext_resource type="Texture2D" uid="uid://db2gfp61o2txb" path="res://assets/char free/tommy-removebg-preview.png" id="6_c0p46"]
+[ext_resource type="Script" path="res://scenes/e.gd" id="7_35qyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqeuo"]
 texture = ExtResource("1_xm4n2")
@@ -954,54 +955,67 @@ tile_set = SubResource("TileSet_pkuea")
 [node name="StaticBody2D" type="StaticBody2D" parent="TileLayers/TileMapLayer2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(48.75, -50.25)
 shape = SubResource("RectangleShape2D_omctj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(16, 8)
 shape = SubResource("RectangleShape2D_8m738")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(-130, 52)
 shape = SubResource("RectangleShape2D_0bxm6")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(52, 190)
 shape = SubResource("RectangleShape2D_mip1g")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(220, 56)
 shape = SubResource("RectangleShape2D_cqofd")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(151, 116.5)
 shape = SubResource("RectangleShape2D_rwj0r")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(-90, 52)
 shape = SubResource("RectangleShape2D_fwd5w")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(-88, 99)
 shape = SubResource("RectangleShape2D_n4hjs")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(-92.5, 145)
 shape = SubResource("RectangleShape2D_8eclw")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(123, 15.5)
 shape = SubResource("RectangleShape2D_ew7un")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(169, 13)
 shape = SubResource("RectangleShape2D_2fa68")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(176, 50.5)
 shape = SubResource("RectangleShape2D_v0365")
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="TileLayers/TileMapLayer2/StaticBody2D"]
+visible = false
 position = Vector2(198, 145)
 shape = SubResource("RectangleShape2D_btvq8")
 
@@ -1027,6 +1041,19 @@ position = Vector2(-35, -13)
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D"]
-visible = false
 position = Vector2(-97, -1)
+shape = SubResource("RectangleShape2D_nxrm0")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="TileLayers"]
+position = Vector2(5, 7)
+script = ExtResource("7_35qyi")
+
+[node name="Body" type="AnimatedSprite2D" parent="TileLayers/CharacterBody2D2"]
+position = Vector2(21, 49)
+scale = Vector2(0.418605, 0.480392)
+sprite_frames = SubResource("SpriteFrames_226nb")
+animation = &"walk_front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D2"]
+position = Vector2(19, 52)
 shape = SubResource("RectangleShape2D_nxrm0")
