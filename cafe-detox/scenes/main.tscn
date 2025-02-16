@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://b67jv1e4ljcuk"]
+[gd_scene load_steps=51 format=4 uid="uid://b67jv1e4ljcuk"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_cvtxm"]
 [ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_xm4n2"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="5_af50k"]
 [ext_resource type="Texture2D" uid="uid://cnoxs7r3m286v" path="res://assets/char free/tommy.png" id="6_a5q3y"]
 [ext_resource type="Script" path="res://scenes/e.gd" id="7_35qyi"]
-[ext_resource type="Script" path="res://scenes/character_body_2d_3.gd" id="8_lqewo"]
 [ext_resource type="SpriteFrames" uid="uid://cf8631acua81m" path="res://assets/char free/female.tres" id="9_njtws"]
 [ext_resource type="AudioStream" uid="uid://dvcalia8ov4ad" path="res://assets/noodle_cafe.wav" id="10_pbora"]
 
@@ -1151,19 +1150,6 @@ sprite_frames = ExtResource("9_njtws")
 animation = &"walk_back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D2"]
-position = Vector2(20.5, 49)
-shape = SubResource("RectangleShape2D_nxrm0")
-
-[node name="CharacterBody2D3" type="CharacterBody2D" parent="TileLayers"]
-script = ExtResource("8_lqewo")
-
-[node name="Body" type="AnimatedSprite2D" parent="TileLayers/CharacterBody2D3"]
-position = Vector2(21, 49)
-scale = Vector2(0.419, 0.419)
-sprite_frames = ExtResource("9_njtws")
-animation = &"walk_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileLayers/CharacterBody2D3"]
 position = Vector2(20.5, 49)
 shape = SubResource("RectangleShape2D_nxrm0")
 
