@@ -1,42 +1,27 @@
-extends CharacterBody2D
+# scripts/NPC.gd
+extends Node2D
 
-# Preload the ChatGPTIntegration script
-const ChatGPTIntegration = preload("res://scripts/chatgpt_integration.gd")
+var target_position: Vector2 = Vector2.ZERO
+var speed: float = 100.0  # Movement speed (pixels per second)
+var moving: bool = false
 
-var state: String = "stressed"
-var personality: String = ""
+# Called by the Café scene to tell the NPC where to go.
+func walk_to(position: Vector2) -> void:
+	target_position = position
+	moving = true
 
-func _ready() -> void:
-	load_personality()
+func _process(delta: float) -> void:
+	if moving:
+		var direction: Vector2 = (target_position - position).normalized()
+		position += direction * speed * delta
+		if position.distance_to(target_position) < 5.0:
+			position = target_position
+			moving = false
+			# Once the NPC reaches its spot, start a conversation.
+			start_conversation()
 
-func load_personality() -> void:
-	var personalities = {
-		"stressed": "I’m overwhelmed by constant notifications!",
-		"calm": "I feel at peace in this warm sanctuary."
-	}
-	personality = personalities.get(state, "I have no feelings right now.")
-	print("NPC personality: ", personality)
-
-func interact() -> void:
-	# Create an instance of ChatGPTIntegration
-	var chat_gpt = ChatGPTIntegration.new()
-	chat_gpt.get_response(personality, "Hello, can I help you relax?", self, "_on_chat_response")
-
-func _on_chat_response(result: int, response_code: int, headers: Array, body: PackedByteArray) -> void:
-	var json = JSON.new()
-	var parse_result = json.parse(body.get_string_from_utf8())
-	if parse_result.error == OK and parse_result.result is Dictionary:
-		var choices = parse_result.result.get("choices", [])
-		if choices.size() > 0:
-			var message = choices[0].get("message", {})
-			var reply: String = message.get("content", "")
-			print("ChatGPT Response: ", reply)
-			if reply.find("relax") >= 0:
-				state = "calm"
-			else:
-				state = "stressed"
-			update_state()
-
-func update_state() -> void:
-	load_personality()
-	# Update animations, visuals, or sounds as needed.
+func start_conversation() -> void:
+	# Find the Dialogue UI node and begin dialogue.
+	var dialogue = get_tree().get_root().find_node("Dialogue", true, false)
+	if dialogue:
+		dialogue.start_dialogue("I really needed a break from all the digital noise!")

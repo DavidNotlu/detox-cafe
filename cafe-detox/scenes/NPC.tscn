@@ -1,3 +1,80 @@
-[gd_scene format=3 uid="uid://yusx3876ixau"]
+[gd_scene load_steps=9 format=3 uid="uid://dxtjn5oqwk74a"]
+
+[ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="1_j3xv0"]
+[ext_resource type="Texture2D" uid="uid://db2gfp61o2txb" path="res://assets/char free/tommy-removebg-preview.png" id="2_kmdr5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp3mj"]
+atlas = ExtResource("2_kmdr5")
+region = Rect2(172, 0, 86, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5lhh"]
+atlas = ExtResource("2_kmdr5")
+region = Rect2(166, 258, 83, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yypen"]
+atlas = ExtResource("2_kmdr5")
+region = Rect2(174, 0, 87, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3if4f"]
+atlas = ExtResource("2_kmdr5")
+region = Rect2(243, 189, 81, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clxxx"]
+atlas = ExtResource("2_kmdr5")
+region = Rect2(243, 120, 81, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdkmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp3mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5lhh")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yypen")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3if4f")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clxxx")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [node name="Npc" type="Node"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_j3xv0")
+
+[node name="Body" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-97, -8)
+scale = Vector2(0.418605, 0.480392)
+sprite_frames = SubResource("SpriteFrames_rdkmb")
+animation = &"walk_right"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

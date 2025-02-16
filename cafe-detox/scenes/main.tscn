@@ -1,11 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://b67jv1e4ljcuk"]
+[gd_scene load_steps=13 format=4 uid="uid://b67jv1e4ljcuk"]
 
 [ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_xm4n2"]
 [ext_resource type="Texture2D" uid="uid://hwxvmehn80xr" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="2_l5k6j"]
 [ext_resource type="Texture2D" uid="uid://dwff88m3soa10" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="3_tt4gp"]
 [ext_resource type="Texture2D" uid="uid://bexbeat01bewq" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="4_m8wp6"]
-[ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="5_af50k"]
-[ext_resource type="Texture2D" uid="uid://db2gfp61o2txb" path="res://assets/char free/tommy-removebg-preview.png" id="6_c0p46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqeuo"]
 texture = ExtResource("1_xm4n2")
@@ -833,69 +831,6 @@ texture = ExtResource("4_m8wp6")
 [sub_resource type="TileSet" id="TileSet_b2idp"]
 sources/0 = SubResource("TileSetAtlasSource_umjcp")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp3mj"]
-atlas = ExtResource("6_c0p46")
-region = Rect2(172, 0, 86, 102)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5lhh"]
-atlas = ExtResource("6_c0p46")
-region = Rect2(166, 258, 83, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yypen"]
-atlas = ExtResource("6_c0p46")
-region = Rect2(174, 0, 87, 115)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3if4f"]
-atlas = ExtResource("6_c0p46")
-region = Rect2(243, 189, 81, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_clxxx"]
-atlas = ExtResource("6_c0p46")
-region = Rect2(243, 120, 81, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_226nb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qp3mj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n5lhh")
-}],
-"loop": true,
-"name": &"walk_back",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yypen")
-}],
-"loop": true,
-"name": &"walk_front",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3if4f")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_clxxx")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
-
 [node name="Main" type="Node"]
 
 [node name="TileLayers" type="Node" parent="."]
@@ -916,12 +851,4 @@ tile_set = SubResource("TileSet_cfqjr")
 tile_map_data = PackedByteArray("AAD6/wMAAAAHAAAAAAD6/wQAAAAHAAEAAAD7/wMAAAAHAAAAAAD7/wQAAAAHAAEAAAD6/wYAAAAHAAAAAAD6/wcAAAAHAAEAAAD7/wYAAAAHAAAAAAD7/wcAAAAHAAEAAAD6/wkAAAAHAAAAAAD6/woAAAAHAAEAAAD7/wkAAAAHAAAAAAD7/woAAAAHAAEAAAADAP3/AAAAAAoAAAADAP7/AAAAAAsAAAAEAP3/AAAAAAoAAAAEAP7/AAAAAAsAAAA=")
 tile_set = SubResource("TileSet_b2idp")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="TileLayers"]
-script = ExtResource("5_af50k")
-
-[node name="Body" type="AnimatedSprite2D" parent="TileLayers/CharacterBody2D"]
-position = Vector2(-97, -8)
-scale = Vector2(0.418605, 0.480392)
-sprite_frames = SubResource("SpriteFrames_226nb")
-
-[node name="Camera2D" type="Camera2D" parent="TileLayers/CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
