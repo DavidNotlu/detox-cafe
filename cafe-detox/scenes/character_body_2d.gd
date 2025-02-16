@@ -14,12 +14,12 @@ func _process(delta):
 		$Body.play("walk_left")
 	elif Input.is_action_pressed("ui_down"):
 		direction.y += 1
-		$Body.play("walk_front")
+		$Body.play("default")
 	elif Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 		$Body.play("walk_back")
 	else:
-		$Body.play("deflaut") # Stops animation if no input
+		$Body.play("default") # Stops animation if no input
 
 	# Move the character
 	if direction != Vector2.ZERO:
