@@ -14,7 +14,7 @@ func _process(delta):
 		$Body.play("walk_left")
 	elif Input.is_action_pressed("ui_down"):
 		direction.y += 1
-		$Body.play("default")
+		$Body.play("walk_front")
 	elif Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 		$Body.play("walk_back")
