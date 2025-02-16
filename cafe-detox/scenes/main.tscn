@@ -923,3 +923,5 @@ script = ExtResource("5_af50k")
 position = Vector2(-97, -8)
 scale = Vector2(0.418605, 0.480392)
 sprite_frames = SubResource("SpriteFrames_226nb")
+
+[node name="Camera2D" type="Camera2D" parent="TileLayers/CharacterBody2D"]
