@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://dxehvv2hd7k5x"]
+[gd_scene load_steps=4 format=4 uid="uid://bbjs8e7wfa3ts"]
 
-[ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_46cp3"]
+[ext_resource type="Texture2D" uid="uid://bbb3qeyebd21r" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_ocgwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbc7v"]
-texture = ExtResource("1_46cp3")
+texture = ExtResource("1_ocgwc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
